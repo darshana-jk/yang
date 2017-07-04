@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces"
+xmlns:fastdsl="urn:bbf:yang:bbf-fastdsl"
+xmlns:vdsl="urn:bbf:yang:bbf-vdsl">
+    <interface>
+        <name>UNI-1</name>
+        <description>VDSL Port 1</description>
+        <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:fastdsl</type>
+        <enabled>true</enabled>
+        <fastdsl:line>
+            <fastdsl:configured-mode>fastdsl:mode-vdsl</fastdsl:configured-mode>
+        </fastdsl:line>
+    </interface>
+</interfaces>
+

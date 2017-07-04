@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File containing the startup configurations for bbf-vdsl yang model.
+The startup configuration is based on the FTTC DSL configuration xls version no. 4 -->
+<vdsl xmlns="urn:bbf:yang:bbf-vdsl">
+    <service/>
+</vdsl>

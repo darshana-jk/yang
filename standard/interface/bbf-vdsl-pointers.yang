@@ -277,6 +277,40 @@ submodule bbf-vdsl-pointers {
   }
 
   // 8 Object model for xDSL Performance Threshold Management
+  grouping threshold-profile {
+    description
+      "Defines 15-min and 24hr line and channel profiles.";
+
+    leaf xtu-15min-line-profile {
+      type bbf-vdsl:line-threshold-profile-ref;
+      mandatory true;
+      description
+        "15-minute Line Threshold Profile identifier.";
+    }
+
+    leaf xtu-24hr-line-profile {
+      if-feature "performance-24hr";
+      type bbf-vdsl:line-threshold-profile-ref;
+      mandatory true;
+      description
+        "1-day Line Threshold Profile identifier.";
+    }
+
+    leaf xtu-15min-channel-threshold-profile {
+      type bbf-vdsl:channel-threshold-profile-ref;
+      mandatory true;
+      description
+        "15-minute Channel Threshold Profile identifier.";
+    }
+
+    leaf xtu-24hr-channel-threshold-profile {
+      if-feature "performance-24hr";
+      type bbf-vdsl:channel-threshold-profile-ref;
+      mandatory true;
+      description
+        "1-day Channel Threshold Profile identifier.";
+    }
+  }
 
   augment '/bbf-vdsl:vdsl/bbf-vdsl:thresholds' {
     description
@@ -294,40 +328,6 @@ submodule bbf-vdsl-pointers {
           "Template name.";
       }
 
-      grouping threshold-profile {
-        description
-          "Defines 15-min and 24hr line and channel profiles.";
-
-        leaf xtu-15min-line-profile {
-          type bbf-vdsl:line-threshold-profile-ref;
-          mandatory true;
-          description
-            "15-minute Line Threshold Profile identifier.";
-        }
-
-        leaf xtu-24hr-line-profile {
-          if-feature "performance-24hr";
-          type bbf-vdsl:line-threshold-profile-ref;
-          mandatory true;
-          description
-            "1-day Line Threshold Profile identifier.";
-        }
-
-        leaf xtu-15min-channel-threshold-profile {
-          type bbf-vdsl:channel-threshold-profile-ref;
-          mandatory true;
-          description
-            "15-minute Channel Threshold Profile identifier.";
-        }
-
-        leaf xtu-24hr-channel-threshold-profile {
-          if-feature "performance-24hr";
-          type bbf-vdsl:channel-threshold-profile-ref;
-          mandatory true;
-          description
-            "1-day Channel Threshold Profile identifier.";
-        }
-      }
 
       container xtu-c {
         description
